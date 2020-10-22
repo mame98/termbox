@@ -1,3 +1,9 @@
+#pragma once
+
+#include <string.h>
+#include <stdio.h>
+#include <sys/stat.h>
+
 enum {
 	T_ENTER_CA,
 	T_EXIT_CA,
