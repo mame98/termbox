@@ -1,24 +1,24 @@
-#include <assert.h>
-#include <stdlib.h>
-#include <string.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <signal.h>
-#include <stdio.h>
-#include <stdbool.h>
-#include <sys/select.h>
-#include <sys/ioctl.h>
-#include <sys/time.h>
-#include <sys/stat.h>
-#include <termios.h>
-#include <unistd.h>
-#include <wchar.h>
-
 #include "termbox.h"
 
 #include "bytebuffer.inl"
-#include "term.inl"
-#include "input.inl"
+#include "input.h"
+#include "term.h"
+
+#include <assert.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <signal.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/stat.h>
+#include <sys/time.h>
+#include <termios.h>
+#include <unistd.h>
+#include <wchar.h>
 
 struct cellbuf {
 	int width;
