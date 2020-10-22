@@ -8,4 +8,13 @@ project(termbox
 
 set(CMAKE_C_STANDARD 11)
 
+option(ENABLE_CLANG_TIDY "Check the code by using clang-tidy during compilation" OFF)
+
+if(ENABLE_CLANG_TIDY)
+    set(CMAKE_C_CLANG_TIDY
+        clang-tidy;
+        -header-filter=.;
+        -checks=bugprone-*,clang-analyzer-*,cert-*,performance-*,portability-*,readability-*;)
+endif()
+
 add_subdirectory(src)
