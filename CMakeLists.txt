@@ -11,10 +11,12 @@ set(CMAKE_C_STANDARD 11)
 option(ENABLE_CLANG_TIDY "Check the code by using clang-tidy during compilation" OFF)
 
 if(ENABLE_CLANG_TIDY)
+    set(CLANG_TIDY_CHECKS "bugprone-*,clang-analyzer-*,cert-*,performance-*,portability-*,readability-*" CACHE STRING "Checks to perform by clang-tidy")
+
     set(CMAKE_C_CLANG_TIDY
         clang-tidy;
         -header-filter=.;
-        -checks=bugprone-*,clang-analyzer-*,cert-*,performance-*,portability-*,readability-*;)
+        -checks=${CLANG_TIDY_CHECKS};)
 endif()
 
 add_subdirectory(src)
