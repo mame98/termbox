@@ -9,6 +9,8 @@ project(termbox
 set(CMAKE_C_STANDARD 11)
 
 option(ENABLE_CLANG_TIDY "Check the code by using clang-tidy during compilation" OFF)
+option(ENABLE_CLANG_FORMAT "Use clang format to auto-format source files" OFF)
+
 
 if(ENABLE_CLANG_TIDY)
     set(CLANG_TIDY_CHECKS "bugprone-*,clang-analyzer-*,cert-*,performance-*,portability-*,readability-*" CACHE STRING "Checks to perform by clang-tidy")
@@ -17,6 +19,19 @@ if(ENABLE_CLANG_TIDY)
         clang-tidy;
         -header-filter=.;
         -checks=${CLANG_TIDY_CHECKS};)
+endif()
+
+if(ENABLE_CLANG_FORMAT)
+    file(GLOB_RECURSE FILES_TO_FORMAT *.c *.h)
+
+    find_program(CLANG_FORMAT NAMES clang-format)
+    add_custom_target(
+            autoformat
+            COMMAND ${CLANG_FORMAT}
+            -style=file
+            -i
+            ${FILES_TO_FORMAT}
+    )
 endif()
 
 add_subdirectory(src)
