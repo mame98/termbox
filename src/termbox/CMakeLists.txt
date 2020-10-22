@@ -4,3 +4,5 @@ add_library(termbox STATIC
         )
 
 target_include_directories(termbox PUBLIC ${CMAKE_CURRENT_LIST_DIR}/..)
+target_compile_options(termbox PRIVATE -Wall -Wextra -Wpedantic)
+target_compile_definitions(termbox PRIVATE -D_XOPEN_SOURCE)
