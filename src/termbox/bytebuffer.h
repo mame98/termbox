@@ -1,3 +1,10 @@
+#pragma once
+
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <unistd.h>
+
 struct bytebuffer {
 	char *buf;
 	int len;

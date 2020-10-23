@@ -1,0 +1,20 @@
+---
+Language: Cpp
+BasedOnStyle: llvm
+AllowShortBlocksOnASingleLine: "false"
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLoopsOnASingleLine: "false"
+IncludeBlocks: Regroup
+NamespaceIndentation: None
+IndentPPDirectives: BeforeHash
+SortIncludes: 'true'
+UseTab: Never
+TabWidth: 4
+IndentWidth: 4
+BreakBeforeBraces: Allman
+AlignConsecutiveMacros: true
+AlignConsecutiveAssignments: true
+AlignConsecutiveDeclarations: true
+PointerAlignment: Right
+ColumnLimit: 80
+...
