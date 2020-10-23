@@ -40,7 +40,7 @@ if(ENABLE_CPPCHECK)
     if (CMAKE_C_CPPCHECK)
         list(
                 APPEND CMAKE_C_CPPCHECK
-                "--enable=warning"
+                "--enable=warning,performance,portability,style"
         )
     endif()
 endif()

@@ -107,11 +107,10 @@ static int try_compatible(const char *term, const char *name,
 
 static int init_term_builtin(void)
 {
-	int i;
 	const char *term = getenv("TERM");
 
 	if (term) {
-		for (i = 0; terms[i].name; i++) {
+		for (int i = 0; terms[i].name; i++) {
 			if (!strcmp(terms[i].name, term)) {
 				keys = terms[i].keys;
 				funcs = terms[i].funcs;

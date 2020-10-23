@@ -354,13 +354,12 @@ void tb_set_clear_attributes(uint16_t fg, uint16_t bg)
 
 static int convertnum(uint32_t num, char* buf) {
 	int i, l = 0;
-	int ch;
 	do {
 		buf[l++] = '0' + (num % 10);
 		num /= 10;
 	} while (num);
 	for(i = 0; i < l / 2; i++) {
-		ch = buf[i];
+		int ch = buf[i];
 		buf[i] = buf[l - 1 - i];
 		buf[l - 1 - i] = ch;
 	}
