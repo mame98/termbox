@@ -36,8 +36,8 @@ void updateAndDrawButtons(int *current, int x, int y, int mx, int my, int n, voi
 		if (lx <= mx && mx <= lx+3 && ly <= my && my <= ly+1) {
 			*current = i;
 		}
-		uint32_t r;
-		uint16_t fg, bg;
+		uint32_t r = 0;
+		uint16_t fg = 0, bg = 0;
 		(*attrFunc)(i, &r, &fg, &bg);
                 tb_change_cell(lx+0, ly+0, r, fg, bg);
                 tb_change_cell(lx+1, ly+0, r, fg, bg);

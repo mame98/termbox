@@ -10,6 +10,7 @@ set(CMAKE_C_STANDARD 11)
 
 option(ENABLE_CLANG_TIDY "Check the code by using clang-tidy during compilation" OFF)
 option(ENABLE_CLANG_FORMAT "Use clang format to auto-format source files" OFF)
+option(ENABLE_CPPCHECK "Use CppCheck for static analysis" OFF)
 
 
 if(ENABLE_CLANG_TIDY)
@@ -33,6 +34,18 @@ if(ENABLE_CLANG_FORMAT)
             ${FILES_TO_FORMAT}
     )
 endif()
+
+if(ENABLE_CPPCHECK)
+    find_program(CMAKE_C_CPPCHECK NAMES cppcheck)
+    if (CMAKE_C_CPPCHECK)
+        list(
+                APPEND CMAKE_C_CPPCHECK
+                "--enable=warning"
+        )
+    endif()
+endif()
+
+
 
 add_subdirectory(src)
 
