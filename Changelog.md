@@ -8,6 +8,8 @@
    better supported.
  - Added `clang-format` based auto formatter to ensure a consistent code-style.
  - Added `clang-tidy` to catch as many code-smells as possible. 
+ - Added `cppcheck` to find even more code-smells
+ - Improved a few code-smells detected by clang-tidy and CppCheck
 
 ----
 
