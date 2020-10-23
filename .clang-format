@@ -1,12 +1,12 @@
 ---
 Language: Cpp
 BasedOnStyle: llvm
-AllowShortBlocksOnASingleLine: "false"
+AllowShortBlocksOnASingleLine: false
 AllowShortIfStatementsOnASingleLine: Never
-AllowShortLoopsOnASingleLine: "false"
+AllowShortLoopsOnASingleLine: false
 IncludeBlocks: Regroup
 NamespaceIndentation: None
-IndentPPDirectives: BeforeHash
+IndentPPDirectives: AfterHash
 SortIncludes: 'true'
 UseTab: Never
 TabWidth: 4
@@ -17,4 +17,5 @@ AlignConsecutiveAssignments: true
 AlignConsecutiveDeclarations: true
 PointerAlignment: Right
 ColumnLimit: 80
+IndentCaseLabels: true
 ...
