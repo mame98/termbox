@@ -14,12 +14,9 @@ option(ENABLE_CPPCHECK "Use CppCheck for static analysis" OFF)
 
 
 if(ENABLE_CLANG_TIDY)
-    set(CLANG_TIDY_CHECKS "bugprone-*,clang-analyzer-*,cert-*,performance-*,portability-*,readability-*" CACHE STRING "Checks to perform by clang-tidy")
-
     set(CMAKE_C_CLANG_TIDY
         clang-tidy;
-        -header-filter=.;
-        -checks=${CLANG_TIDY_CHECKS};)
+        -header-filter=.;)
 endif()
 
 if(ENABLE_CLANG_FORMAT)

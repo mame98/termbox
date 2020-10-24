@@ -18,4 +18,6 @@ AlignConsecutiveDeclarations: true
 PointerAlignment: Right
 ColumnLimit: 80
 IndentCaseLabels: true
+MaxEmptyLinesToKeep: 2
+
 ...
