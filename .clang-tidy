@@ -1,0 +1,5 @@
+Checks: '
+  bugrpone-*,protability-*,performance-*,
+  -bugprone-macro-parentheses
+
+'
