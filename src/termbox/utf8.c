@@ -1,4 +1,4 @@
-#include "termbox.h"
+#include "utf8.h"
 
 static const unsigned char utf8_length[256] = {
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -20,7 +20,7 @@ int tb_utf8_char_length(char c) { return utf8_length[(unsigned char)c]; }
 int tb_utf8_char_to_unicode(uint32_t *out, const char *c)
 {
     if (*c == 0)
-        return TB_EOF;
+        return TB_UTF8_EOF;
 
     int           i;
     unsigned char len    = tb_utf8_char_length(*c);
