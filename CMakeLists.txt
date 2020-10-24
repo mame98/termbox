@@ -46,6 +46,8 @@ endif()
 
 add_subdirectory(src)
 
+add_subdirectory(docs)
+
 install(FILES README.md Changelog.md COPYING DESTINATION share/doc/termbox/)
 
 # CPack for distribution
